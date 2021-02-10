@@ -2,6 +2,7 @@
   <div class="container">
     <div class="col-4">
       <%= link_to 'LETTERS', root_path, class: "navbar-brand" %>
+      <%= link_to 'LETTERSとは', homes_about_path %>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle nabigation">
       <span class="navbar-toggler-icon"></span>
@@ -9,8 +10,25 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-md-auto align-item-center">
         <li>
-          <%= link_to 'LETTERSとは', homes_about_path %>
+          <%= link_to '手紙を書く',"#", class: "nav-link" %>
         </li>
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to "#", class: "nav-link" do %>
+              こんにちは <%= @user.name %> さん
+            <% end %>
+          </li>
+          <li>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to '新規登録', new_user_registration_path, class: "nav-link" %>
+          </li>
+          <li>
+            <%= link_to 'ログイン', new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
