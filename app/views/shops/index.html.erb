@@ -1,0 +1,22 @@
+<div class="container mt-5 d-flex">
+  <div class="row">
+    <% @shops.each do |shop| %>
+      <div class="col-md-4 col-sm-6">
+        <div class="card bg-light mb-4">
+          <div class="card-body">
+            <h5 class="card-title"><%= shop.name %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= shop.prefecture.name %></h6>
+          </div>
+          <div class="card-footer bg-light">
+            <%= link_to '#', class: "btn btn-primary mb-1" do %>
+              手紙を見る
+            <% end %>
+            <%= link_to '#', class: "btn btn-primary mb-1" do %>
+              手紙を書く
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
