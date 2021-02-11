@@ -3,28 +3,28 @@
     <%= link_to 'LETTERS', root_path, class: "navbar-brand" %>
     <%= link_to 'LETTERSとは', homes_about_path %>
   </div>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle nabigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-md-auto align-item-center">
-      <li>
-        <%= link_to '手紙を書く',"#", class: "nav-link" %>
+      <li class="nav-item active">
+        <%= link_to '店舗一覧', shops_path, class: "nav-link" %>
       </li>
       <% if user_signed_in? %>
-        <li>
+        <li class="nav-item">
           <%= link_to "#", class: "nav-link" do %>
             こんにちは <%= @user.name %> さん
           <% end %>
         </li>
-        <li>
+        <li class="nav-item">
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
       <% else %>
-        <li>
+        <li class="nav-item">
           <%= link_to '新規登録', new_user_registration_path, class: "nav-link" %>
         </li>
-        <li>
+        <li class="nav-item">
           <%= link_to 'ログイン', new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>

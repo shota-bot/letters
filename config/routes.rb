@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get "homes/about" => "homes#about"
   resources :letters, only: [:index]
+  resources :shops, only: [:index, :show]
 end
