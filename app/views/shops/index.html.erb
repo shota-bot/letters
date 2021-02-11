@@ -8,8 +8,8 @@
             <h6 class="card-subtitle mb-2 text-muted"><%= shop.prefecture.name %></h6>
           </div>
           <div class="card-footer bg-light">
-            <%= link_to "手紙を見る", '#', class: "btn btn-primary mb-1" %>
-            <%= link_to "手紙を書く", '#', class: "btn btn-primary mb-1" %>
+            <%= link_to "手紙を見る", shop_letters_path(shop.id), class: "btn btn-info mb-1" %>
+            <%= link_to "手紙を書く", shop_path(shop.id), class: "btn btn-info mb-1" %>
           </div>
         </div>
       </div>

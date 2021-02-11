@@ -6,5 +6,6 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
+    @letter = Letter.new
   end
 end

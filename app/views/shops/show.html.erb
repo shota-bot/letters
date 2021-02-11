@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title"><%= @shop.name %></h1>
+          <h4 class="card-subtitle mb-2 text-muted"><%= @shop.prefecture.name %></h4>
+        </div>
+      </div>
+      <%= render partial: "letters/form", locals: { letter: @letter, shop: @shop } %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+

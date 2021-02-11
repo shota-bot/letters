@@ -1,0 +1,22 @@
+<h3 class="mt-5">手紙を書く</h3>
+
+<% if letter.errors.any? %>
+  <ul>
+    <% letter.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div>
+  <%= form_with model: letter, url: shop_letters_path(shop), local: true do |f| %>
+    <%= f.hidden_field :shop_id, value: shop.id %>
+
+    <div class="form-group">
+      <%= f.text_area :content, class: "form-control", rows: "5" %>
+    </div>
+
+    <%= f.submit "送る", class: "btn btn-info" %>
+    <%= link_to '他の手紙を見る', shop_letters_path(shop), class: "btn btn-info ml-3" %>
+  <% end %>
+</div>
